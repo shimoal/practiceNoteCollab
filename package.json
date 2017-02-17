@@ -1,0 +1,21 @@
+{
+  "name": "socketnote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.2",
+    "express": "^4.14.1",
+    "socket.io": "^1.7.2"
+  }
+}

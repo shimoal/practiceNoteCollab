@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <script src="/socket.io/socket.io.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+</head>
+<body ng-controller="MainCtrl">
+  Hello world
+
+  <button id="createButton" ng-click="createNote()" class="btn btn-info pull-right"> Create Note </button>
+
+  <div sticky-note ng-repeat="note in notes" note="note" class="alert alert-block sticky-note" ondelete="deleteNote(id)">
+    <button type="button" class="close" ng-click="deleteNote(note.id)">&times;</button>
+    <input ng-model="note.title" ng-change="updateNote(note)" type="text" class="title" >
+    <textarea ng-model="note.body" ng-change="updateNote(note)" class="body">{{note.body}}</textarea>
+  </div>
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="./js/collab.js"></script>
+
+</body>
+</html>
