@@ -3,11 +3,12 @@ app = express(),
 server = require('http').createServer(app),
 io = require('socket.io').listen(server);
 
+var port = process.env.PORT || 8080;
+
 app.use(express.static(__dirname + '/public'));
 
 
 io.sockets.on('connection', function(socket) {
-
   socket.on('createNote', function(data) {
     socket.broadcast.emit('onNoteCreated', data);
   });
@@ -26,6 +27,6 @@ io.sockets.on('connection', function(socket) {
 });
 
 
-server.listen(1337, function() {
-  console.log('listening on port 1337');
+server.listen(port, function() {
+  console.log('listening on port ' + port);
 });
